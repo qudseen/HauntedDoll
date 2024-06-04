@@ -1,0 +1,45 @@
+package com.development.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.TreeMap;
+
+import com.development.domain.Extra;
+import static com.development.dao.DBConstants.*;
+
+public class Extra {
+
+	private Connection connection;
+    DbDAO dbDAO;  // for common DB methods
+    
+	public Extra(DbDAO db) {
+		dbDAO = db;
+		connection = db.getConnection();
+	}
+	
+	public List<Extra> getAllDollNames() throws SQLException {
+		Map<Integer, Extra> extras = new TreeMap<Integer, Extra>();
+
+		Extra extra = null;
+		Statement stmt = connection.createStatement();
+		try {
+			ResultSet set = null;
+			set = stmt.executeQuery("select * from " + DOLL_NAMES_TABLE + " order by id");
+			while (set.next()) {
+				int id = set.getInt("id");
+				extra = new Extra(id , set.getString("name"));
+				extras.put(id, extra);
+			}
+
+		} finally {
+			stmt.close();
+		}
+		return new LinkedList<Extra>(extras.values());
+	}
+
+}

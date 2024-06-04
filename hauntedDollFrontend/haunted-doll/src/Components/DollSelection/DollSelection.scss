@@ -1,0 +1,27 @@
+.doll-selection-box {
+    margin-top: 20px;
+    .form-header{
+        margin-bottom: 20px;
+    }
+    .select-wrapper {
+        display: table;
+        padding-top: 20px;
+        width: 100%;
+        .doll-selection-label{
+            display: table-cell;
+            width: 200px;
+            white-space: nowrap;
+        }
+        span {
+            display: table-cell;
+            padding: 0 4px 0 20px;
+        }
+        .doll-selection-select{
+            width: 70%;
+        }
+    }
+
+    .add-button {
+        margin-top: 50px;
+    }
+}

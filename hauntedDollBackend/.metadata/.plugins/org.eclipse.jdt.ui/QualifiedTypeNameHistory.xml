@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="main.java.dao.UserDAO"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+    <fullyQualifiedTypeName name="main.java.domain.User"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Consumes"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlRootElement"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.dsig.XMLObject"/>
+    <fullyQualifiedTypeName name="com.development.domain.testxml"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="com.development.domain.Status"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+</qualifiedTypeNameHistroy>

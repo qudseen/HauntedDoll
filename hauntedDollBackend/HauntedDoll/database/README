@@ -1,0 +1,33 @@
+Various ways to load, drop, and look at the database. All require the environment
+variables ORACLE_USER, etc., and the two tunnels for the databases working.
+Note that you'll have two H2 databases, one on pe07, one on your home system.
+
+1. Use these scripts -- they cover all the needed cases.
+
+For database H2, use runH2Script.sh/runH2Script.cmd:
+runH2Script.sh createdb.sql   (for Windows, drop the .sh)
+runH2Script.sh showdb.sql
+runH2Script.sh dropdb.sql
+
+Scripts for pe07's mysql and dbs3's oracle: For home use (or on pe07), use these shell scripts. 
+They use a JDBC program inside h2.jar to run the SQL script (no use of the H2 database here)
+runOracleScript.sh createdb.sql, etc. (for Windows, drop the .sh)
+runMysqlScript.sh createdb.sql, etc.
+
+Special case: running scripts from pe07 itself: we can use mysql and sqlplus there
+runOracleScriptLocal.sh and runMysqlScriptLocal.sh are meant only for pe07, using
+   its system programs sqlplus and mysql. 
+   
+2. Alternatively, if you have ant installed at home, it gives you one way that works both on 
+pe07 and at home, once you have defined ORACLE_USER, etc.
+On pe07, ant is already installed.
+ant load-oradb
+ant show-oradb
+ant drop-oradb
+ant load-mysqldb
+ant show-mysqldb
+ant drop-mysqldb
+ant load-h2
+ant show-h2
+ant drop-h2
+

@@ -1,0 +1,18 @@
+package com.development.dao;
+
+import domain.User;
+
+public class UserDAO {
+
+	public boolean signup() {
+		// sign up method]
+		return true;
+	}
+	
+	public User signin() {
+		// sign in method
+		User usr = new User();
+		usr.setName("test");
+		return usr;
+	}
+}

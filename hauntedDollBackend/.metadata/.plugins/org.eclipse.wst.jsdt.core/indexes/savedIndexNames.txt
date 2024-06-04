@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\dbms\hauntedDollBackend\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2031124321.index
+2571273190.index
+2181185377.index
+1796005684.index
+3991831093.index

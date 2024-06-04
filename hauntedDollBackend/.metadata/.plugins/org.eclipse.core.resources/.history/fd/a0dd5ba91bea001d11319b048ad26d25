@@ -1,0 +1,35 @@
+package service;
+
+import javax.ws.rs.GET;
+// import javax.ws.rs.POST;
+import javax.ws.rs.Path; 
+import javax.ws.rs.Produces; 
+import javax.ws.rs.core.MediaType;
+
+import dao.UserDAO;
+import domain.User;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet("/UserService") 
+public class UserService extends HttpServlet{  
+   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	UserDAO userDAO = new UserDAO();  
+	//   @POST
+	//   @Path("/signup") 
+	//   @Produces(MediaType.APPLICATION_XML) 
+	//   public boolean signup(){ 
+	//      return userDAO.signup();
+	//   }
+   
+   @GET
+   @Path("/signin") 
+   @Produces(MediaType.APPLICATION_XML) 
+   public User signin(){ 
+      return userDAO.signin();
+   }
+}

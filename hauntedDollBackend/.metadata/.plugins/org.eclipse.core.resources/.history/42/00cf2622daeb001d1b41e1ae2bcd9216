@@ -1,0 +1,42 @@
+package com.development.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.development.domain.User;
+
+public class UserDAO {
+
+	private Connection connection;
+    DbDAO dbDAO;  // for common DB methods
+    
+	public UserDAO(DbDAO db) throws SQLException {
+		dbDAO = db;
+		connection = db.getConnection();
+	}
+	
+	public boolean signup() {
+		// sign up method]
+		return true;
+	}
+	
+	// sign in method
+	public User signin(String username, String password) {
+		User usr= null;
+		Statement stmt = connection.createStatement();
+		try {
+			ResultSet set = null;
+			set = stmt.executeQuery("select * from " + USERS_TABLE + " where username = " + username + " order by id");
+			if (set.next()) {
+				usr = new PizzaOrder(set.getInt("id"), set.getInt("room_number"), null, null, null, set.getInt("day"),
+						set.getInt("status"));
+			}
+
+		} finally {
+			stmt.close();
+		}
+		return usr;
+	}
+}

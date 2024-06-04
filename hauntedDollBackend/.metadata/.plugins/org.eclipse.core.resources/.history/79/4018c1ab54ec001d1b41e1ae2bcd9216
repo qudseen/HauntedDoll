@@ -1,0 +1,54 @@
+package com.development.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.development.domain.User;
+import static com.development.dao.DBConstants.*;
+
+public class UserDAO {
+
+	private Connection connection;
+    DbDAO dbDAO;  // for common DB methods
+    
+	public UserDAO(DbDAO db) {
+		dbDAO = db;
+		connection = db.getConnection();
+	}
+	
+	public boolean signup(String name, String username, String email, String password) throws SQLException {
+		// sign up method
+		// insert into users table
+
+		Statement stmt = connection.createStatement();
+		try {
+			stmt.executeQuery("insert into " + USERS_TABLE + " (`id`, `name`, `username`, `email`, `password`) "
+					+ "VALUES (1, '"+ name +"', '"+ username +"', '"+ email +"', '"+ password +"')");
+		} catch(Exception e){
+			return false;
+		}finally {
+			stmt.close();
+		}
+		
+		return true;
+	}
+	
+	// sign in method
+	public User signin(String username, String password) throws SQLException {
+		User usr= null;
+		Statement stmt = connection.createStatement();
+		try {
+			ResultSet set = null;
+			set = stmt.executeQuery("select * from " + USERS_TABLE + " where username = '" + username + "' and password = '" + password + "' order by id");
+			if (set.next()) {
+				usr = new User(set.getInt("id"), set.getString("name"), set.getString("username"), set.getString("email"));
+			}
+
+		} finally {
+			stmt.close();
+		}
+		return usr;
+	}
+}

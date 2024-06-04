@@ -1,0 +1,10 @@
+.sign-in-page-container {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 15%;
+    left: 25%;
+    .invalid-credentials-error {
+        color: red;
+    }
+}

@@ -1,0 +1,60 @@
+{
+	"name": "haunted-doll",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.0",
+		"@emotion/styled": "^11.11.0",
+		"@fontsource/roboto": "^4.5.8",
+		"@fortawesome/fontawesome-free": "^6.4.0",
+		"@mui/icons-material": "^5.11.16",
+		"@mui/material": "^5.12.3",
+		"@mui/x-data-grid": "^6.3.1",
+		"buffer": "^6.0.3",
+		"immer": "^9.0.15",
+		"lodash": "^4.17.21",
+		"mdb-react-ui-kit": "^6.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"xml-js": "^1.6.11"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.19.3",
+		"@types/lodash": "^4.14.186",
+		"@types/node": "^16.11.65",
+		"@types/react": "^18.2.0",
+		"@types/react-dom": "^18.2.0",
+		"@typescript-eslint/eslint-plugin": "^5.46.1",
+		"@typescript-eslint/parser": "^5.46.1",
+		"eslint": "^8.25.0",
+		"prettier": "^2.7.1",
+		"prettier-stylelint": "^0.4.2",
+		"react-error-overlay": "^6.0.11",
+		"react-scripts": "^5.0.1",
+		"sass": "^1.55.0",
+		"stylelint": "^14.13.0",
+		"stylelint-config-recommended": "^9.0.0",
+		"stylelint-config-standard-scss": "^6.1.0",
+		"stylelint-order": "^6.0.1",
+		"stylelint-scss": "^4.3.0",
+		"typescript": "^4.7.4"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

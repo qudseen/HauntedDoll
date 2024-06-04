@@ -1,0 +1,34 @@
+package com.development.service;
+
+import java.io.Serializable;  
+import javax.xml.bind.annotation.XmlElement; 
+import javax.xml.bind.annotation.XmlRootElement; 
+@XmlRootElement(name = "error") 
+
+public class Error implements Serializable {  
+   private static final long serialVersionUID = 1L; 
+   private String type; 
+   private String text;
+   
+   public Error(String type, String text){  
+      this.type = type;
+      this.text = text;
+   }  
+   
+
+   public String getType() { 
+      return type; 
+   } 
+   @XmlElement 
+   public void setType(String type) { 
+      this.type = type; 
+   }
+
+	public String getText() {
+		return text;
+	}
+	 @XmlElement 
+	public void setText(String text) {
+		this.text = text;
+	}
+}

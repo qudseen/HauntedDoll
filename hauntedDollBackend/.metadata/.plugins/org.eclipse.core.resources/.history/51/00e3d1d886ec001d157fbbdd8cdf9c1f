@@ -1,0 +1,11 @@
+-- drop targets of FKs after tables with the FKs
+drop table users;	
+drop table doll_extra_options;	
+drop table doll_orders;	
+drop table doll_names;
+drop table doll_sizes;
+drop table menu_doll_names;
+drop table menu_doll_sizes;
+drop table menu_doll_extra_options;
+	
+drop table doll_sys_tab;

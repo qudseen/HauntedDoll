@@ -1,0 +1,13 @@
+package main.java.dao;
+
+public class UserDAO {
+
+	public void signup() {
+		// sign up method
+	}
+	
+	public boolean signin() {
+		// sign in method
+		return true;
+	}
+}

@@ -1,0 +1,54 @@
+package com.development.service;
+
+import java.sql.SQLException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path; 
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import com.development.dao.UserDAO;
+import com.development.dao.DbDAO;
+import com.development.domain.User;
+import com.development.domain.testxml;
+
+@Path("/UserService")
+public class UserService{
+	private String dbUrl = "jdbc:mysql://localhost:3306/haunted_doll";
+	private String user = "admin";
+	private String password = "password";
+			
+	DbDAO dbDAO = new DbDAO(dbUrl, user, password);
+	UserDAO userDAO = new UserDAO(dbDAO);  
+
+	@GET
+	@Path("/test") 
+	@Produces(MediaType.APPLICATION_XML)
+	public testxml test(){ 
+		testxml test = new testxml("name");
+		return test;
+	}
+
+	@POST
+	@Path("/signup") 
+	public boolean signup(){ 
+		return userDAO.signup();
+	}
+   
+   @GET
+   @Path("/signin")
+   @Produces(MediaType.APPLICATION_XML)
+   public User signin(@QueryParam("username") String username, @QueryParam("password") String password){
+      try {
+    	  if (username == "" || password == "") return null;
+		User usr = userDAO.signin(username, password);
+		return usr;
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+   }
+}

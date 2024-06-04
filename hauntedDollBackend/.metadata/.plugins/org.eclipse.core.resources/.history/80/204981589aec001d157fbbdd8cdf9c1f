@@ -1,0 +1,63 @@
+package com.development.domain;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement; 
+
+@XmlRootElement(name = "cart") 
+public class Cart implements Serializable {  
+   private static final long serialVersionUID = 1L; 
+
+   private int id;
+   private String dollName;
+   private String dollSize;
+   private List<String> extras;
+
+   public Cart(){} 
+   
+   public Cart(int id, String name, String dollName, String dollSize, List<String> extras){  
+      this.id = id;
+      this.dollName = dollName;
+      this.dollSize = dollSize;
+      this.extras = extras;
+   }  
+
+   public int getId() {
+		return id;
+	}
+   @XmlElement 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDollName() {
+		return dollName;
+	}
+	@XmlElement
+	public void setDollName(String dollName) {
+		this.dollName = dollName;
+	}
+
+	public String getDollSize() {
+		return dollSize;
+	}
+	@XmlElement
+	public void setDollSize(String dollSize) {
+		this.dollSize = dollSize;
+	}
+
+	public List<String> getExtras() {
+		return extras;
+	}
+	@XmlElement
+	public void setExtras(List<String> extras) {
+		this.extras = extras;
+	}
+
+	public void addExtras(String extra) {
+		this.extras.add(extra);
+	}
+
+}

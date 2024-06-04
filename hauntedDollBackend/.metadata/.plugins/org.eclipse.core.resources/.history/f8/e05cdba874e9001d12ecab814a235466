@@ -1,0 +1,29 @@
+package main.java.service;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path; 
+import javax.ws.rs.Produces; 
+import javax.ws.rs.core.MediaType;
+
+import main.java.dao.UserDAO;
+import main.java.domain.User;
+
+@Path("/UserService") 
+
+public class UserService {  
+   UserDAO userDAO = new UserDAO();  
+   @POST
+   @Path("/signup") 
+   @Produces(MediaType.APPLICATION_JSON) 
+   public boolean signup(){ 
+      return userDAO.signup();
+   }
+   
+   @GET
+   @Path("/signin") 
+   @Produces(MediaType.APPLICATION_JSON) 
+   public User signin(){ 
+      return userDAO.signin();
+   }
+}
